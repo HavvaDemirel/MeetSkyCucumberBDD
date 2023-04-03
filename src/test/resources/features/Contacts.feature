@@ -5,9 +5,10 @@ Feature: Contacts Module Functionality
   Background: For the scenarios in the feature file, user is expected to be on login page
 
     Given user logged in successfully
+    And user clicks contacts icon
 
     Scenario: User creates new contact
-      When user clicks on contacts icon
+
       And user clicks New contact
       And user put name and last name of new contact
       Then user sees new contact name on the page
