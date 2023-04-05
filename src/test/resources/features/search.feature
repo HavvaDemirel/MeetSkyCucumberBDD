@@ -1,4 +1,4 @@
-
+@smoke
 Feature: User can search file typing its name through the magnifying glass icon and see the details side page of the file when clicked on it.
   @MEETS10-396
   Scenario: User can search file typing its name through the magnifying glass icon and see the details side page of the file when clicked on it.

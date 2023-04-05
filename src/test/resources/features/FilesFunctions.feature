@@ -1,3 +1,4 @@
+@smoke
 @Wip
 Feature: Files Functionality
   US: As a user, I should be able to add a file to favorites, rename any file and give some comments on any file.
@@ -5,7 +6,7 @@ Feature: Files Functionality
   Background:
     Given user logged in successfully
 
-  @MEETS10-399 @smoke
+  @MEETS10-399
   Scenario: User can add a comment to any file
 
     Given the user click on the files button

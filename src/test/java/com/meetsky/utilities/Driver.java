@@ -15,36 +15,64 @@ import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 public class Driver {
-    private Driver() {
-    }
+    private Driver(){}
 
+
+
+    private static InheritableThreadLocal<WebDriver> driverPool = new InheritableThreadLocal<>();
     private static WebDriver driver;
 
-    //we make Webdriver private because we want to close access from outside the class
-    // we make it static bc we will use it in a static method
-    public static WebDriver getDriver() {
-        //create a reusable utility method which will return same driver instance when we call it
 
-        if (driver == null) {
-            // we read our browser type from configuration reader.proprietary
-            //this way we can control which browser is opened from outside our code from configuration.property
+
+
+    public static WebDriver getDriver(){
+
+        if (driverPool.get() == null){
+
             String browserType = ConfigurationReader.getProperty("browser");
-            switch(browserType){
+
+
+
+            switch (browserType){
                 case "chrome":
                     WebDriverManager.chromedriver().setup();
-                    driver = new ChromeDriver();
-
-
+                    driverPool.set(new ChromeDriver());
+                    driverPool.get().manage().window().maximize();
+                    driverPool.get().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+                    break;
+                case "firefox":
+                    WebDriverManager.firefoxdriver().setup();
+                    driverPool.set(new FirefoxDriver());
+                    driverPool.get().manage().window().maximize();
+                    driverPool.get().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+                    break;
+                case "remote-chrome":
+                    try {
+                        String gridAddress = "52.23.212.228";
+                        URL url = new URL("http://" + gridAddress + ":4444/wd/hub");
+                        DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
+                        desiredCapabilities.setBrowserName("chrome");
+                        driver = new RemoteWebDriver(url,desiredCapabilities);
+                    }
+                    catch (Exception e){
+                        e.printStackTrace();
+                    }
             }
-        }
-        return driver;
-    }
 
-    //this method will make sure our driver value s always null after using quit() method
-    public static void closeDriver(){
-        if (driver==null){
-            driver.quit();//this line will terminate the existing session. value will not even be null
-            driver = null;
+
+
         }
+        return driverPool.get();
+
+
+
+    }
+    public static void closeDriver(){
+        if(driverPool.get() != null ){
+
+            driverPool.get().quit();
+            driverPool.remove();
+        }
+
     }
 }
