@@ -13,10 +13,10 @@ import org.junit.runner.RunWith;
                 "json:target/cucumber.json",
                  "me.jvt.cucumber.report.PrettyReports:target/cucumber",
         },
-         features = "src/test/resources/features",
+        features = "src/test/resources/features",
         glue = "com/meetsky/step_definitions",
         dryRun =false,
-        tags = "@Wip",
+        tags = "",
         publish = false
 )
 
