@@ -1,5 +1,3 @@
-@smoke
-@Wip
 Feature: Files Functionality
   US: As a user, I should be able to add a file to favorites, rename any file and give some comments on any file.
 

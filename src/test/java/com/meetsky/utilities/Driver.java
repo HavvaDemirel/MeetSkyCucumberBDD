@@ -22,9 +22,6 @@ public class Driver {
     private static InheritableThreadLocal<WebDriver> driverPool = new InheritableThreadLocal<>();
     private static WebDriver driver;
 
-
-
-
     public static WebDriver getDriver(){
 
         if (driverPool.get() == null){
@@ -52,7 +49,7 @@ public class Driver {
                         URL url = new URL("http://" + gridAddress + ":4444/wd/hub");
                         DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
                         desiredCapabilities.setBrowserName("chrome");
-                        driver = new RemoteWebDriver(url,desiredCapabilities);
+                        WebDriver driver = new RemoteWebDriver(url,desiredCapabilities);
                     }
                     catch (Exception e){
                         e.printStackTrace();
