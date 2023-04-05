@@ -1,10 +1,11 @@
-
 Feature: User can search file typing its name through the magnifying glass icon and see the details side page of the file when clicked on it.
+  @z
   @MEETS10-396
   Scenario: User can search file typing its name through the magnifying glass icon and see the details side page of the file when clicked on it.
     Given User is on the logs in and in the dashboard page
     And user clicks search button and types DoNotDelete
     Then user sees DoNotDelete folder
+  @z
   @MEETS10-395
   Scenario: User can search contacts by clicking on the contacts icon and typing its name
     Given User is on the logs in and in the dashboard page
