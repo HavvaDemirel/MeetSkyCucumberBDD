@@ -29,6 +29,27 @@ public class ContactsPage {
     @FindBy(xpath = "//svg[@viewBox='0 0 24 24']")
     public WebElement allListIcon;
 
+    @FindBy(xpath = "//div[@role='listitem']/span[1]")
+    public WebElement firstPerson;
+
+    @FindBy(xpath = "(//button[@type='button'])[9]")
+    public WebElement picIcon;
+
+    @FindBy(xpath = "(//button[@type='button']/span[2])[9]")
+    public WebElement chooseFromFiles;
+
+    @FindBy(xpath = "//div[@class='oc-dialog']")
+    public WebElement fileWindow;
+
+    @FindBy(xpath = "//div[@role='listitem']/span[3]")
+    public WebElement thirdPerson;
+
+    @FindBy(xpath = "(//span[@class='material-design-icon dots-horizontal-icon'])[4]")
+    public WebElement threeDots;
+
+    @FindBy(xpath="(//button[@type='button'])[16]")
+    public WebElement deleteButton;
+
 
 
 

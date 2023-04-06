@@ -7,7 +7,7 @@ Feature: Contacts Module Functionality
     Given user logged in successfully
     And user clicks contacts icon
 
-    @wip
+
     Scenario: User creates new contact
       And user clicks New contact
       And user put name and last name of new contact
@@ -25,13 +25,13 @@ Feature: Contacts Module Functionality
     picture by using “Choose from files” option
       When user clicks any user
       And user clicks contact's profile picture
-      And user is able to click choose from files
+      Then user is able to click choose from files
 
-
+@wip
     Scenario:  User can delete any selected contact
       When user clicks any contact
       And user click ... next to contact's name
-      And user deletes contact
+      Then user deletes contact
 
 
 
