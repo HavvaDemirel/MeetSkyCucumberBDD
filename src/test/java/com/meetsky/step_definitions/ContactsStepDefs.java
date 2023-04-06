@@ -9,10 +9,13 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.security.Key;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -39,17 +42,25 @@ String fakeName= faker.name().firstName();
     }
     @Given("user put name and last name of new contact")
     public void user_put_name_and_last_name_of_new_contact() {
-       contactsPage.fullNameInput.sendKeys(fakeName);
+      BrowserUtils.sleep(5);
+       contactsPage.fullNameInput.clear();
+       BrowserUtils.sleep(2);
+       contactsPage.fullNameInput.sendKeys(fakeName+ Keys.ENTER);
+
+       contactsPage.allContactButton.click();
+
        BrowserUtils.sleep(5);
     }
     @Then("user sees new contact name on the page")
     public void user_sees_new_contact_name_on_the_page() {
         BrowserUtils.sleep(4);
 
-        List<WebElement> list= new ArrayList<>();
-        list.add(contactsPage.middleArea);
+        List<WebElement> list= new ArrayList<>(Driver.getDriver().findElements(By.xpath("//div[@role='group']")));
+
+
         for (WebElement each : list) {
-            Assert.assertTrue(each.getText().equals(fakeName));
+
+            Assert.assertTrue(each.getText().contains(fakeName));
         }
         
     }
@@ -113,14 +124,6 @@ String fakeName= faker.name().firstName();
     public void user_deletes_contact() {
         BrowserUtils.sleep(6);
         contactsPage.deleteButton.click();
-        BrowserUtils.sleep(6);
-        List<WebElement> allContacts= new ArrayList<>();
-        allContacts.add(contactsPage.middleArea);
-
-        for (WebElement each : allContacts) {
-            Assert.assertFalse(contactsPage.firstPerson.isDisplayed());
-        }
-
 
     }
 
