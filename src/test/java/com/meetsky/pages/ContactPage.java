@@ -53,10 +53,13 @@ public class ContactPage {
 
     @FindBy (xpath = "//*[@id=\"app-content-vue\"]/div/div[2]/section/div[6]/div/div[2]/div[2]/input")
     public WebElement addNewProperty;
+
     @FindBy(id = "new-contact-button")
     public WebElement newcontactbutton;
+
     @FindBy(xpath = "//input[@class='multiselect__input' and @autocomplete='nope' and @placeholder='Choose property type']")
     public WebElement propertytype;
+
     @FindBy(xpath = "//span[@class='name-parts__first' and text()='Birthday']")
     public WebElement birthdaybutton;
 
