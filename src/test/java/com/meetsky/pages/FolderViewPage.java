@@ -24,7 +24,6 @@ public class FolderViewPage {
     public List<WebElement> nameList;
 
     @FindBy(xpath = "//div[@id='app-content-files']//table//span[.='Size']")
-   // @FindBy(xpath = "//span[@class='sort-indicator icon-triangle-s']")
     public WebElement sizeButton;
 
     @FindBy(xpath = "//table[@id='filestable']/tbody/tr/td[3]")

@@ -85,10 +85,9 @@ public class FolderViewStepDefs {
             sizeBeforeClick.add(names.getText());
         }
 
-        //BrowserUtils.sleep(3);
         Thread.sleep(2);
         folderViewPage.sizeButton.click();
-       // BrowserUtils.sleep(3);
+
 
         List<WebElement> tableElementAfterClick = folderViewPage.sizeList;
         List<String> size = new ArrayList<>();
