@@ -1,4 +1,4 @@
-
+@wip
 Feature: Contacts Module Functionality
 
   User story: As a user, I should be able to create a new contact and edit/delete any contact under Contacts module
@@ -7,7 +7,7 @@ Feature: Contacts Module Functionality
     Given user logged in successfully
     And user clicks contacts icon
 
-@wip
+
     Scenario: User creates new contact
       And user clicks New contact
       And user put name and last name of new contact
