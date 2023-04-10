@@ -41,8 +41,7 @@ public class FilesPage {
     @FindBy(xpath = "(//input[@type='submit'])[2]")
     public WebElement submitArrowButton;
 
-    @FindBy(xpath = "(//*[.='Selcuk'])[2]")
-    public WebElement newSelcukFolder;
+
 
     @FindBy(xpath = "//*[@id=\"fileList\"]/tr[7]/td[2]/a/span[1]/span")
     public WebElement newAddedFolder;
@@ -83,6 +82,67 @@ public class FilesPage {
     public WebElement addToFavoritesButton;
     @FindBy(xpath = "//span[.='Rename']")
     public WebElement renameButton;
+
+    @FindBy(xpath = "//table[@id='filestable']//tbody/tr[3]//td[2]")
+    public WebElement movingFolder;
+
+    @FindBy(xpath = "//*[@id=\"fileList\"]/tr/td[2]")
+    public WebElement movedFolder;
+
+    @FindBy(xpath = "//*[@id=\"fileList\"]/tr[4]/td[2]")
+    public WebElement copiedFolder;
+
+
+//    @FindBy(xpath = "(//*[.='DestinationFolder'])[4]")
+//    public WebElement destinationFolder1;
+
+    @FindBy(xpath = "(//span[.='Move or copy'])[3]")
+    public WebElement moveOrCopy;
+
+    @FindBy(xpath = "//*[.='Destinati']")
+    public WebElement destinationFolder2;
+
+    @FindBy(xpath = "//*[.='onFolder2']")
+    public WebElement destinationFolderCopy;
+
+
+
+    @FindBy(xpath = "//*[@id=\"body-user\"]/div[10]/div[2]/button[2]")
+    public WebElement moveToDestinationButton;
+
+    @FindBy(xpath = "//*[@id=\"body-user\"]/div[10]/div[2]/button[1]")
+    public WebElement copyToDestinationButton;
+
+    @FindBy(xpath = "//label[@for='checkbox-allnewfiles']")
+    public WebElement keepNewFileButton;
+
+    @FindBy(xpath = "//button[@class='continue']")
+    public WebElement continueButton;
+
+    @FindBy(xpath = "//table[@id='filestable']/tbody//tr//td[2]")
+    public List<WebElement> namesInTheTable;
+
+    @FindBy(xpath = "//*[@id=\"fileList\"]/tr[10]/td[2]/a/span[3]/a[2]")
+    public WebElement deleteDots;
+
+    @FindBy(xpath = "//*[.='Delete folder']")
+    public WebElement deleteFolderButton;
+
+    @FindBy(xpath = "//table[@id='filestable']/tbody/tr[10]/td[2]")
+    public WebElement deleteFolder;
+
+    @FindBy(xpath = "//*[.='Deleted files']")
+    public WebElement deletedFilesButton;
+
+    @FindBy(xpath = "(//*[@id=\"fileList\"]/tr[1]/td[2]/a/span[1])[2]")
+    public WebElement deletedFile;
+
+    @FindBy(xpath = "//*[.=' Restore']")
+    public WebElement restoreButton;
+
+
+
+
 
 
 
