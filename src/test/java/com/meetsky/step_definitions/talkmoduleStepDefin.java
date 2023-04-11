@@ -54,24 +54,28 @@ public class talkmoduleStepDefin {
     public void iAddAsAParticipantAnyOfTheContactsAndToTheConversation() {
         BrowserUtils.sleep(5);
 
-        Actions actions = new Actions(Driver.getDriver());
-        actions.doubleClick(talkModulePage.UserA);
+       /* Actions actions = new Actions(Driver.getDriver());
+        actions.click(talkModulePage.UserA);
         BrowserUtils.sleep(5);
 
-        actions.doubleClick(talkModulePage.UserB);
+        actions.click(talkModulePage.UserB);
+        BrowserUtils.sleep(5);
+*/
+
+        talkModulePage.UserA.click();
+        BrowserUtils.sleep(5);
+        talkModulePage.UserB.click();
         BrowserUtils.sleep(5);
 
-
-
-      /*  JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+    /*  JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
 
         //3- Scroll down to “userA” link
        js.executeScript("arguments[0].scrollIntoView(true)", talkModulePage.UserA);
         BrowserUtils.sleep(5);
         js.executeScript("arguments[0].scrollIntoView(true)", talkModulePage.UserB);
         BrowserUtils.sleep(5);
+*/
 
-       */
 
      /*   for (WebElement option : talkModulePage.addAnyParticipant) {
             if (option.getAttribute("class").contains(UserA.toLowerCase())) {
@@ -98,11 +102,15 @@ public class talkmoduleStepDefin {
 
     @And("I click Create conversation button")
     public void iClickCreateConversationButton() {
-       // talkModulePage.createConversation.click();
-        BrowserUtils.sleep(5);
 
+        BrowserUtils.sleep(5);
+/*
         Actions actions = new Actions(Driver.getDriver());
-        actions.doubleClick(talkModulePage.createConversation);
+        actions.click(talkModulePage.createConversation);
+
+       */
+
+        talkModulePage.createConversation.click();
         BrowserUtils.sleep(5);
     }
 

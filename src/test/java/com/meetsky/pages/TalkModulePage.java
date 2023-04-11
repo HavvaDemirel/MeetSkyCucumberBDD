@@ -28,13 +28,13 @@ public class TalkModulePage {
    // @FindBy(xpath = "//li[starts-with(@class,'participant-row isSearched')]")
     //public List<WebElement> addAnyParticipant;
 
-    @FindBy(xpath = "//*[@id=\"content-vue\"]/div[2]/div[2]/div/div/div[1]/div/div[3]/div[1]/ul/li[2]")
+    @FindBy(xpath = "//li[@aria-label='Add participant \"?124@.,\"']")
     public WebElement UserA;
 
-    @FindBy(xpath = "//*[@id=\"content-vue\"]/div[2]/div[2]/div/div/div[1]/div/div[3]/div[1]/ul/li[3]")
+    @FindBy(xpath = "//li[@aria-label='Add participant \"A\"']")
     public WebElement UserB;
 
-    @FindBy(linkText = "Create conversation")
+    @FindBy(xpath = "//button[@class='button-vue navigation__button-right button-vue--text-only button-vue--vue-primary']")
     public WebElement createConversation;
 
     @FindBy(xpath = "//a[starts-with(@id,'conversation')]")
