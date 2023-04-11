@@ -16,7 +16,7 @@ public class LoginStepDefs {
 
         Driver.getDriver().get(ConfigurationReader.getProperty("meetsky.url"));
 
-        loginPage.usernameInputBox.sendKeys(ConfigurationReader.getProperty("meetsky.username"));
+        loginPage.usernameInputBox.sendKeys(ConfigurationReader.getProperty("meetsky.username.nazli"));
         loginPage.passwordInputBox.sendKeys(ConfigurationReader.getProperty("meetsky.password"));
         loginPage.loginButton.click();
         Assert.assertEquals(Driver.getDriver().getTitle(),ConfigurationReader.getProperty("expected.title"));
