@@ -10,13 +10,13 @@ Feature: File feature
     And the user is on the Files page
 #***************************************************************************
 
-  #@wip1
+ @smoke #@MEETS10-411 @wip1
   Scenario: User uploads a file
     When the user clicks on the plus icon button
     And clicks on upload file button
     Then the file should appear in the Files list
     #***********************************************************************
-  #@wip1
+  #@MEETS10-412 @wip1
   Scenario: User creates a new folder
     When the user clicks on the plus icon button
     And clicks on New Folder file button
@@ -24,7 +24,7 @@ Feature: File feature
     Then the new folder should appear in the Files list
 
     #************************************************************************
- # @wip1
+ #@MEETS10-419 @wip1
   Scenario: User moves a selected item to a folder
     When the user right clicks on a file
     And selects move or copy
@@ -32,7 +32,7 @@ Feature: File feature
     And clicks on the Move to Destination button again
     Then the selected item should appear in the destination folder
   #*************************************************************************
- # @wip1
+ # @MEETS10-424 @wip1
  Scenario: User copies a selected item to a folder
     When the user right clicks on a different file
     And selects move or copy
@@ -40,15 +40,15 @@ Feature: File feature
     And clicks on the Copy to Destination button again
     Then the selected item should appear in the destination folder
   #*************************************************************************
-  #@wip1
+  #@MEETS10-425 @wip1
   Scenario: User deletes a selected item
     When the user clicks on three dots from Folder's menu
     And clicks on the Delete Folder button
     Then the selected item should disappear from the Files list
   #************************************************************************
-#
-#  Scenario: User sees the total number of files and folders
-#    Then the Files list should display the total number of files and folders
+  #@MEETS10-423 @wip1
+  Scenario: User sees the total number of files and folders
+    Then the Files list should display the total number of files and folders
   #************************************************************************
 
 

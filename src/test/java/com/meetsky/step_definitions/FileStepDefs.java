@@ -44,6 +44,7 @@ public class FileStepDefs {
     @When("the user clicks on the plus icon button")
     public void theUserClicksOnThePlusIconButton() {
         filesPage.plusIcon.click();
+        BrowserUtils.waitFor(2);
     }
 
     @And("clicks on upload file button")
@@ -246,4 +247,18 @@ public class FileStepDefs {
         filesPage.restoreButton.click();
 
     }
+
+    //***********************SIXTH SCENARIO STEP DEFINITIONS**************************
+
+
+    @Then("the Files list should display the total number of files and folders")
+    public void theFilesListShouldDisplayTheTotalNumberOfFilesAndFolders() {
+
+
+        filesPage.totalFolders.isDisplayed();
+
+        filesPage.totalFiles.isDisplayed();
+
+    }
+
 }

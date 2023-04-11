@@ -140,6 +140,12 @@ public class FilesPage {
     @FindBy(xpath = "//*[.=' Restore']")
     public WebElement restoreButton;
 
+    @FindBy(xpath = "//*[@id=\"filestable\"]/tfoot/tr/td[2]/span/span[1]")
+    public WebElement totalFolders;
+
+    @FindBy(xpath = "//*[@id=\"filestable\"]/tfoot/tr/td[2]/span/span[3]")
+    public WebElement totalFiles;
+
 
 
 

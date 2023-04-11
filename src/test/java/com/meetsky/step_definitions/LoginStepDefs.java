@@ -24,6 +24,4 @@ public class LoginStepDefs {
         Assert.assertEquals(Driver.getDriver().getTitle(),ConfigurationReader.getProperty("expected.title"));
 
     }
-
-
 }
