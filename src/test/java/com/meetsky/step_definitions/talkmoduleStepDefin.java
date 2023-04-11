@@ -137,46 +137,66 @@ public class talkmoduleStepDefin {
 
     @When("I click on the threeDot button which is displayed next to UserA")
     public void iClickOnTheThreeDotButtonWhichIsDisplayedNextTo() {
+        BrowserUtils.sleep(4);
+        talkModulePage.threeDotUserA.click();
+        BrowserUtils.sleep(5);
     }
 
     @And("I click on the Remove Participant button")
     public void iClickOnTheRemoveParticipantButton() {
+        talkModulePage.removeUserA.click();
+        BrowserUtils.sleep(5);
+
     }
 
-    @Then("I should see UserA removed from the conversation")
-    public void iShouldSeeRemovedFromTheConversation() {
-    }
-
-    @And("UserA is deleted and not displayed anymore")
-    public void isDeletedAndNotDisplayedAnymore() {
+    @Then("I should see UserA removed from the conversation UserA is deleted and not displayed anymore")
+    public void iShouldSeeUserARemovedFromTheConversationUserAIsDeletedAndNotDisplayedAnymore() {
+        Assert.assertTrue(talkModulePage.displayyedRemoveUserA.getText().contains("You removed"));
+        BrowserUtils.sleep(5);
     }
 
     @And("I click the group name")
     public void iClickTheGroupName() {
+        talkModulePage.groupName.click();
+        BrowserUtils.sleep(5);
     }
 
-    @And("I am in a group conversation with UserB")
-    public void iAmInAGroupConversationWith() {
-    }
+    @When("I type Hello! in the input box to UserB")
+    public void iTypeHelloInTheInputBoxToUserB() {
 
-    @When("I type Hello! in the input box")
-    public void iTypeInTheInputBox(String arg0) {
+        Actions actions = new Actions(Driver.getDriver());
+
+        actions.sendKeys("Hello!").perform();
+
+        BrowserUtils.sleep(5);
+
+
     }
 
     @And("I press Enter or click on the send button")
     public void iPressEnterOrClickOnTheSendButton() {
+        Actions actions = new Actions(Driver.getDriver());
+        actions.sendKeys(Keys.ENTER).perform();
+        BrowserUtils.sleep(5);
     }
 
     @Then("The message displayed in the conversation with tick sign")
     public void theMessageDisplayedInTheConversationWithTickSign() {
+        Assert.assertTrue(talkModulePage.textDisplay.isDisplayed());
+        BrowserUtils.sleep(5);
+        Assert.assertTrue(talkModulePage.tickSign.isDisplayed());
+        BrowserUtils.sleep(5);
+
     }
 
-    @And("there is a group conversation that I previously created")
-    public void thereIsAGroupConversationThatIPreviouslyCreated() {
-    }
 
     @And("I click on the threeDotButton which is displayed next the group name")
     public void iClickOnTheThreeDotButtonWhichIsDisplayedNextTheGroupName() {
+      //  talkModulePage.threeDotNextGroupName.click();
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        js.executeScript("arguments[0].scrollIntoView(true)", talkModulePage.threeDotNextGroupName);
+
+        BrowserUtils.sleep(5);
     }
 
     @And("I click on the Delete conversation button")
@@ -194,4 +214,7 @@ public class talkmoduleStepDefin {
     @Then("the conversation should no longer be listed under group conversations")
     public void theConversationShouldNoLongerBeListedUnderGroupConversations() {
     }
+
+
+
 }

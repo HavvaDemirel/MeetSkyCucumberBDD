@@ -49,4 +49,31 @@ public class TalkModulePage {
     @FindBy(xpath = "//li[starts-with(@class,'participant-row offline')]")
     public List<WebElement> usersDisplayed;
 
+    @FindBy(xpath = "//*[@id=\"tab-participants\"]/div/div/div/ul/li[3]/div[3]/div/div/button")
+    public WebElement threeDotUserA;
+
+    @FindBy(xpath = "//*[starts-with(@id,'menu')]/li[7]")
+    public WebElement removeUserA;
+
+    @FindBy(xpath ="//*[starts-with(@id,'conversation_9qu4seh4')]/div/div[2]/div[1]/div[2]/span[1]")
+   // @FindBy(linkText = "You removed")
+    public WebElement displayyedRemoveUserA;
+
+
+
+    @FindBy(xpath = "//*[@id=\"conversation_o6cgk4j8\"]")
+    public WebElement groupName;
+
+
+    @FindBy(xpath = "//*[@id=\"message_2455\"]/div/div[2]/div[1]/div")
+    public WebElement textDisplay;
+
+    @FindBy(xpath = "//*[@id=\"message_2456\"]/div/div/div[2]/div")
+    public WebElement tickSign;
+
+    @FindBy(xpath = "//*[@id=\"conversation_4zkxx574\"]/div/div[2]/div[2]/div/div/div/button/span")
+    public WebElement threeDotNextGroupName;
+
+
+
 }
