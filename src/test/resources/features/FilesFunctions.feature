@@ -5,7 +5,7 @@ Feature: Files Functionality
   Background:
     Given user logged in successfully
 
-  @MEETS10-399 @smoke
+ # @MEETS10-399 @smoke
   Scenario: User can add a comment to any file
 
     Given the user click on the files button
