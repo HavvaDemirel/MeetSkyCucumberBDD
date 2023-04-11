@@ -44,7 +44,7 @@ public class ContactPage {
     @FindBy (xpath = "//*[@id=\"app-content-vue\"]/div/div[2]/section/div[5]/div/div[2]/div[2]/div[1]")
     public WebElement contactGroupsDropdown;
 
-    @FindBy (xpath = "//*[@id=\"app-navigation-vue\"]/ul/li[5]/a/span")
+    @FindBy (xpath = "//*[@id=\"app-navigation-vue\"]/ul/li[4]/a/span")
     public WebElement  groupsFriendText;
 
     @FindBy (xpath = "//*[@id=\"NzQyYjAyZDMtZDJmOC00MzM0LWEzYTktMWNhNDhlOWJkZjdkfmNvbnRhY3\"]/div[2]/span")
