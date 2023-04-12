@@ -1,5 +1,6 @@
 package com.meetsky.step_definitions;
 
+import com.meetsky.utilities.BrowserUtils;
 import com.meetsky.utilities.Driver;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -33,7 +34,7 @@ public class Hooks {
         }
 
 
-
+        BrowserUtils.sleep(5);
       Driver.closeDriver();
 
 

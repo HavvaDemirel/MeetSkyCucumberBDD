@@ -42,5 +42,7 @@ public class StatusPage {
     @FindBy( xpath = "//span[contains(@class,'emoji-set-apple emoji-type-native')] [contains(text(),'\uD83D\uDE0E')]")
     public WebElement emojiSunglasses;
 
+ @FindBy( xpath = "//span[contains(@class,'button-vue__text')] [contains(text(),'Clear status message')]")
+ public WebElement clearStatusMessage;
 
 }

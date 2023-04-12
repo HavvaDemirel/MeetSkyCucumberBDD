@@ -26,7 +26,7 @@ public class onlineStatus_StepsDefs {
 
 
         Assert.assertTrue(statusPage.setStatus.isDisplayed());
-        BrowserUtils.sleep(3);
+      //  BrowserUtils.sleep(3);
     }
 
     @And("user clicks on the Set Status button")
@@ -38,7 +38,7 @@ public class onlineStatus_StepsDefs {
 
     @And("user should be able to see Online button")
     public void user_should_be_able_to_see_online_button() {
-
+        BrowserUtils.sleep(5);
         Assert.assertTrue(statusPage.onlineStatus.isDisplayed());
 
     }
@@ -54,7 +54,7 @@ public class onlineStatus_StepsDefs {
     @When("user clicks on the Away button")
     public void user_clicks_on_the_away_button() {
 
-        BrowserUtils.sleep(5);
+        BrowserUtils.sleep(15);
         statusPage.awayButton.click();
 
     }
@@ -106,7 +106,7 @@ public class onlineStatus_StepsDefs {
     @And("user writes new message on placeholder")
     public void userWritesNewMessageOnPlaceholder() {
 
-        BrowserUtils.sleep(5);
+        BrowserUtils.sleep(7);
         statusPage.messagePHolder.sendKeys("Hello World!");
     }
 
@@ -133,5 +133,8 @@ public class onlineStatus_StepsDefs {
 
     @Then("user clicks on the Clear status button")
     public void userClicksOnTheClearStatusButton() {
+
+        BrowserUtils.sleep(5);
+        statusPage.clearStatusMessage.click();
     }
 }
