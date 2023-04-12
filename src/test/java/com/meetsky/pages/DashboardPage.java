@@ -6,9 +6,15 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class DashboardPage {
+
     public DashboardPage(){
-        PageFactory.initElements(Driver.getDriver(),this);
+
+        PageFactory.initElements(Driver.getDriver(), this);
     }
+
+    @FindBy(xpath = "(//a[@aria-label='Files'])[1]")
+    public WebElement fileButton;
+
 
     @FindBy(xpath = "//*[@id=\"header-menu-unified-search\"]/div[2]/div[1]/form/input")
     public WebElement searchbutton;
@@ -22,4 +28,8 @@ public class DashboardPage {
     public WebElement DoNotDeleteContact;
     @FindBy(className = "app-dashboard")
     public WebElement dashboardpagemaincontent;
+
+
+
+
 }
