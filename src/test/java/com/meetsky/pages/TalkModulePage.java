@@ -59,20 +59,38 @@ public class TalkModulePage {
    // @FindBy(linkText = "You removed")
     public WebElement displayyedRemoveUserA;
 
-
-
-    @FindBy(xpath = "//*[@id=\"conversation_o6cgk4j8\"]")
+    @FindBy(xpath = "//*[starts-with(@id,'conversation')]/div/div[2]/div[1]/div[1]/span[1]")
+   // @FindBy(xpath = "//*[@id=\"conversation_svp9d8es\"]/div/div[2]/div[1]/div[2]/span[1]")
     public WebElement groupName;
 
+    @FindBy(xpath = "//*[@id=\"app-content-vue\"]/div/div[1]/div[2]/button")
+    public WebElement peopleMenuButton;
 
-    @FindBy(xpath = "//*[@id=\"message_2455\"]/div/div[2]/div[1]/div")
+
+    @FindBy(xpath = "//*[starts-with(@id,'message_2')]/div/div[2]/div[1]/div")
     public WebElement textDisplay;
 
-    @FindBy(xpath = "//*[@id=\"message_2456\"]/div/div/div[2]/div")
+    @FindBy(xpath = "//*[starts-with(@id,'message_2')]/div/div/div[2]/div")
     public WebElement tickSign;
 
-    @FindBy(xpath = "//*[@id=\"conversation_4zkxx574\"]/div/div[2]/div[2]/div/div/div/button/span")
+    @FindBy(xpath = "(//div[@class='trigger'][1]/button/span)[1]")
     public WebElement threeDotNextGroupName;
+
+   @FindBy(xpath = "//*[starts-with(@id,'menu')]/li[6]/button")
+  //@FindBy(xpath = "//*[@id=\"menu-ngksd\"]/li[6]/button")
+    public WebElement deleteConversation;
+
+    @FindBy(xpath = "//*[@id=\"body-user\"]/div[9]/h2")
+   // @FindBy(linkText = "Do you really want to delete \"Friends\"?")
+    public WebElement confirmMessageDelete;
+
+   // @FindBy(xpath = "//*[@id=\"body-user\"]/div[9]/div[2]/button[2]")
+    @FindBy(xpath = "//button[@class=\"primary\"]")
+    public WebElement yesButton;
+
+   // @FindBy(xpath = "//*[@id=\"emptycontent\"]/h2")
+    @FindBy(xpath ="//*[@id=\"emptycontent-icon\"]")
+    public WebElement emptyContent;
 
 
 

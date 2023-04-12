@@ -193,28 +193,49 @@ public class talkmoduleStepDefin {
     @And("I click on the threeDotButton which is displayed next the group name")
     public void iClickOnTheThreeDotButtonWhichIsDisplayedNextTheGroupName() {
       //  talkModulePage.threeDotNextGroupName.click();
-        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+     /*   JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
         js.executeScript("arguments[0].scrollIntoView(true)", talkModulePage.threeDotNextGroupName);
-
+      */
         BrowserUtils.sleep(5);
+       // Actions actions = new Actions(Driver.getDriver());
+        talkModulePage.groupName.click();
+        BrowserUtils.sleep(5);
+      //  actions.moveToElement(talkModulePage.threeDotNextGroupName).perform();
+        talkModulePage.threeDotNextGroupName.click();
+
     }
 
     @And("I click on the Delete conversation button")
     public void iClickOnTheDeleteConversationButton() {
+        BrowserUtils.sleep(3);
+        talkModulePage.deleteConversation.click();
+
     }
 
     @And("I should see a confirmation message")
     public void iShouldSeeAConfirmationMessage() {
+        Assert.assertTrue(talkModulePage.confirmMessageDelete.isDisplayed());
+        BrowserUtils.sleep(5);
     }
 
     @And("I click the Yes button")
     public void iClickTheYesButton() {
+        talkModulePage.yesButton.click();
+        BrowserUtils.sleep(5);
     }
 
     @Then("the conversation should no longer be listed under group conversations")
     public void theConversationShouldNoLongerBeListedUnderGroupConversations() {
+
+        Assert.assertTrue(talkModulePage.emptyContent.isDisplayed());
+        BrowserUtils.sleep(5);
     }
 
 
-
+    @And("I click people menu button")
+    public void iClickPeopleMenuButton() {
+        BrowserUtils.sleep(5);
+        talkModulePage.peopleMenuButton.click();
+        BrowserUtils.sleep(3);
+    }
 }
