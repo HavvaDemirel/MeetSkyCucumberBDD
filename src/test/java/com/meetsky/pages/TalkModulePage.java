@@ -93,5 +93,10 @@ public class TalkModulePage {
     public WebElement emptyContent;
 
 
+    @FindBy(xpath = "//*[@id=\"expand\"]/div")
+    public WebElement userButton;
+
+    @FindBy(xpath = "//*[@id=\"expanddiv\"]/ul/li[4]/a")
+    public WebElement logOutButton;
 
 }

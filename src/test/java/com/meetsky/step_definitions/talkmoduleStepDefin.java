@@ -238,4 +238,14 @@ public class talkmoduleStepDefin {
         talkModulePage.peopleMenuButton.click();
         BrowserUtils.sleep(3);
     }
+
+    @And("user logged out")
+    public void userLoggedOut() {
+        BrowserUtils.sleep(3);
+        talkModulePage.userButton.click();
+        BrowserUtils.sleep(3);
+        talkModulePage.logOutButton.click();
+        BrowserUtils.sleep(3);
+
+    }
 }

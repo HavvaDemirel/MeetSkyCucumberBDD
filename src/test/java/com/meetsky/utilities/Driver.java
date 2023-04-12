@@ -27,7 +27,7 @@ public class Driver {
         public static WebDriver getDriver() {
             //create a reusable utility method which will return same driver instance when we call it
 
-            if (driver == null) {
+            if (driver != null) {
                 // we read our browser type from configuration reader.proprietary
                 //this way we can control which browser is opened from outside our code from configuration.property
                 String browserType = ConfigurationReader.getProperty("browser");
