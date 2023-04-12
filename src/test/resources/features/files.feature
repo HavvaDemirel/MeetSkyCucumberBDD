@@ -10,7 +10,7 @@ Feature: File feature
     And the user is on the Files page
 #***************************************************************************
 
- #@smoke #@MEETS10-411 @wip1
+  #@MEETS10-411 @wip1
   Scenario: User uploads a file
     When the user clicks on the plus icon button
     And clicks on upload file button
