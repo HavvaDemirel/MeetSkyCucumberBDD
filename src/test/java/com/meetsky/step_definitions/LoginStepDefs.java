@@ -1,6 +1,5 @@
 package com.meetsky.step_definitions;
 
-import com.meetsky.pages.DashboardPage;
 import com.meetsky.pages.LoginPage;
 import com.meetsky.utilities.ConfigurationReader;
 import com.meetsky.utilities.Driver;
@@ -18,10 +17,13 @@ public class LoginStepDefs {
 
         Driver.getDriver().get(ConfigurationReader.getProperty("meetsky.url"));
 
-        loginPage.usernameInputBox.sendKeys(ConfigurationReader.getProperty("meetsky.username.selcuk"));
+        loginPage.usernameInputBox.sendKeys(ConfigurationReader.getProperty("meetsky.username"));
         loginPage.passwordInputBox.sendKeys(ConfigurationReader.getProperty("meetsky.password"));
         loginPage.loginButton.click();
         Assert.assertEquals(Driver.getDriver().getTitle(),ConfigurationReader.getProperty("expected.title"));
 
     }
+
+
+
 }
