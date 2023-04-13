@@ -11,7 +11,6 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
-import org.testng.annotations.BeforeMethod;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -91,7 +90,8 @@ public class FolderViewStepDefs {
             sizeBeforeClick.add(names.getText());
         }
 
-        Thread.sleep(2);
+       // Thread.sleep(2);
+        BrowserUtils.sleep(3);
         folderViewPage.sizeButton.click();
 
 
@@ -108,8 +108,9 @@ public class FolderViewStepDefs {
 
     //3rd scenario
     @When("user click on Modified button")
-    public void user_click_on_modified_button() {
+    public void user_click_on_modified_button() throws InterruptedException {
         BrowserUtils.sleep(3);
+        //Thread.sleep(2);
         folderViewPage.modifiedButton.click();
         BrowserUtils.sleep(3);//
     }
@@ -140,29 +141,34 @@ public class FolderViewStepDefs {
 
     //4rth scenario
     @When("user click on toggle-view")
-    public void user_click_on_toggle_view() {
-        BrowserUtils.sleep(3);
+    public void user_click_on_toggle_view() throws InterruptedException {
+        //BrowserUtils.sleep(3);
+        BrowserUtils.waitFor(2);
         folderViewPage.toggleViewButton.click();
-        BrowserUtils.sleep(3);
+       // BrowserUtils.sleep(3);
     }
 
     @Then("user can see the files,folders with large icons")
-    public void user_can_see_the_files_folders_with_large_icons() {
-        Assert.assertTrue(folderViewPage.listView.isDisplayed());
+    public void user_can_see_the_files_folders_with_large_icons() throws InterruptedException {
+       // Thread.sleep(2);
+        BrowserUtils.waitFor(2);
+       Assert.assertTrue( folderViewPage.listView.isDisplayed());
 
 
     }
 
     //5th scenario
     @When("user click on Select all checkbox")
-    public void user_click_on_select_all_checkbox() {
+    public void user_click_on_select_all_checkbox() throws InterruptedException {
         BrowserUtils.sleep(3);//
+
         folderViewPage.checkBox.click();
         BrowserUtils.sleep(3);
     }
     @And("user see all checkboxes are selected")
-    public void user_see_all_checkboxes_are_selected() {
-        BrowserUtils.sleep(3);
+    public void user_see_all_checkboxes_are_selected() throws InterruptedException {
+        //BrowserUtils.sleep(3);
+        Thread.sleep(2);
         Assert.assertTrue(folderViewPage.checkBox.isEnabled());
     }
 
