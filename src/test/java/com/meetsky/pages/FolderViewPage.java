@@ -44,7 +44,10 @@ public class FolderViewPage {
     @FindBy(xpath = "//tr/td[2]")
     public List<WebElement> fileNames;
 
-    @FindBy(xpath = "//label[@class='button icon-toggle-filelist']")
+   // @FindBy(xpath = "//label[@class='button icon-toggle-filelist']")
+
+    @FindBy(xpath = "//label[@class='button icon-toggle-pictures']")
+   // @FindBy(xpath = "//table[@class='list-container has-controls']")
     public WebElement listView;
 
     //@FindBy(xpath = "//table[@class='list-container has-controls']")
