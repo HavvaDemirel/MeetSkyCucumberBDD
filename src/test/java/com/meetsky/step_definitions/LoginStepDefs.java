@@ -3,7 +3,6 @@ package com.meetsky.step_definitions;
 import com.meetsky.pages.LoginPage;
 import com.meetsky.utilities.ConfigurationReader;
 import com.meetsky.utilities.Driver;
-import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -17,8 +16,8 @@ public class LoginStepDefs {
 
         Driver.getDriver().get(ConfigurationReader.getProperty("meetsky.url"));
 
-        loginPage.usernameInputBox.sendKeys(ConfigurationReader.getProperty("meetsky.username"));
-        loginPage.passwordInputBox.sendKeys(ConfigurationReader.getProperty("meetsky.password"));
+        loginPage.usernameInputBox.sendKeys(ConfigurationReader.getProperty("meetsky.username.sumeyra"));
+        loginPage.passwordInputBox.sendKeys(ConfigurationReader.getProperty("meetsky.password.sumeyra"));
         loginPage.loginButton.click();
         Assert.assertEquals(Driver.getDriver().getTitle(),ConfigurationReader.getProperty("expected.title"));
 
