@@ -55,7 +55,7 @@ public class TalkModulePage {
     @FindBy(xpath = "//*[starts-with(@id,'menu')]/li[7]")
     public WebElement removeUserA;
 
-    @FindBy(xpath ="//*[starts-with(@id,'conversation_9qu4seh4')]/div/div[2]/div[1]/div[2]/span[1]")
+    @FindBy(xpath ="//*[starts-with(@id,'conversation')]/div/div[2]/div/div[2]/span[1]")
    // @FindBy(linkText = "You removed")
     public WebElement displayyedRemoveUserA;
 
@@ -67,7 +67,11 @@ public class TalkModulePage {
     public WebElement peopleMenuButton;
 
 
-    @FindBy(xpath = "//*[starts-with(@id,'message_2')]/div/div[2]/div[1]/div")
+    @FindBy(xpath = "//*[@id=\"app-content-vue\"]/div/div[2]/div[3]/div/form/div[2]/div[2]/div")
+    public WebElement inbox;
+
+    @FindBy(xpath = "//*[starts-with(@id,'message')]/div/div[2]/div[1]/div")
+   // @FindBy(xpath ="//*[@id=\"app-content-vue\"]/div/div[2]/div[2]/div[2]/div[2]")
     public WebElement textDisplay;
 
     @FindBy(xpath = "//*[starts-with(@id,'message_2')]/div/div/div[2]/div")

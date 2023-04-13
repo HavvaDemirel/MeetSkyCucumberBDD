@@ -161,6 +161,11 @@ public class talkmoduleStepDefin {
         BrowserUtils.sleep(5);
     }
 
+    @And("I click inbox")
+    public void iClickInbox() {
+        talkModulePage.inbox.click();
+        BrowserUtils.sleep(3);
+    }
     @When("I type Hello! in the input box to UserB")
     public void iTypeHelloInTheInputBoxToUserB() {
 
@@ -172,6 +177,7 @@ public class talkmoduleStepDefin {
 
 
     }
+
 
     @And("I press Enter or click on the send button")
     public void iPressEnterOrClickOnTheSendButton() {
@@ -248,4 +254,6 @@ public class talkmoduleStepDefin {
         BrowserUtils.sleep(3);
 
     }
+
+
 }
