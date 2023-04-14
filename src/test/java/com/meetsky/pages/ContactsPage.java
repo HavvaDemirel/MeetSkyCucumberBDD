@@ -11,7 +11,7 @@ public class ContactsPage {
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
-    @FindBy(xpath = "//a[@aria-label='Contacts'][1]")
+    @FindBy(xpath = "(//ul[@id='appmenu'])/li[7]/a")
     public WebElement contactsIcon;
 
     @FindBy(id = "new-contact-button")
@@ -29,8 +29,8 @@ public class ContactsPage {
     @FindBy(xpath = "//svg[@viewBox='0 0 24 24']")
     public WebElement allListIcon;
 
-    @FindBy(xpath = "//div[@role='listitem']/span[1]")
-    public WebElement firstPerson;
+    @FindBy(xpath = "(//div[@role='listitem']/span)[5]")
+    public WebElement lastPerson;
 
     @FindBy(xpath = "(//button[@type='button'])[9]")
     public WebElement picIcon;
@@ -41,8 +41,11 @@ public class ContactsPage {
     @FindBy(xpath = "//div[@class='oc-dialog']")
     public WebElement fileWindow;
 
-    @FindBy(xpath = "//div[@role='listitem']/span[3]")
-    public WebElement thirdPerson;
+    @FindBy(xpath = "//a[@class='oc-dialog-close']")
+    public WebElement closefile;
+
+    @FindBy(xpath = "(//div[@class='option__details'])[4]")
+    public WebElement threeName;
 
     @FindBy(xpath = "(//span[@class='material-design-icon dots-horizontal-icon'])[4]")
     public WebElement threeDots;
@@ -50,7 +53,15 @@ public class ContactsPage {
     @FindBy(xpath="(//button[@type='button'])[16]")
     public WebElement deleteButton;
 
+    @FindBy(xpath = "(//div[@role='listitem']/span)[1]")
+    public WebElement firstContact;
 
+
+    @FindBy(xpath = "//div[@id='expand']")
+    public WebElement profileE;
+
+    @FindBy(xpath = "//nav[@class='settings-menu menu']/ul/li[4]")
+    public WebElement logout;
 
 
 

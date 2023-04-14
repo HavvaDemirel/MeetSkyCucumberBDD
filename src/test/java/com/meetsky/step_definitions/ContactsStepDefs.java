@@ -29,10 +29,10 @@ String fakeName= faker.name().firstName();
 
     @Given("user clicks contacts icon")
     public void user_clicks_contacts_icon() {
-      BrowserUtils.sleep(10);
+      BrowserUtils.sleep(15);
        contactsPage= new ContactsPage();
-       contactsPage.contactsIcon.click();
-
+       BrowserUtils.clickWithJS(contactsPage.contactsIcon);
+        BrowserUtils.sleep(10);
 
     }
     @Given("user clicks New contact")
@@ -63,7 +63,15 @@ String fakeName= faker.name().firstName();
 
             Assert.assertTrue(each.getText().contains(fakeName));
         }
-        
+        BrowserUtils.sleep(5);
+        BrowserUtils.clickWithJS(contactsPage.firstContact);
+        BrowserUtils.clickWithJS(contactsPage.threeDots);
+        BrowserUtils.clickWithJS(contactsPage.deleteButton);
+
+        BrowserUtils.sleep(5);
+        contactsPage.profileE.click();
+        BrowserUtils.sleep(2);
+        contactsPage.logout.click();
     }
 
     @When("user clicks All contacts")
@@ -93,7 +101,15 @@ String fakeName= faker.name().firstName();
         for (WebElement each : allContacts) {
             System.out.println(each.getText());
            Assert.assertEquals(each.getText(), "three");
-        }
+        }/*
+        BrowserUtils.sleep(5);
+        contactsPage.closefile.click();
+        BrowserUtils.sleep(5);
+        contactsPage.profileE.click();
+        BrowserUtils.sleep(2);
+        contactsPage.logout.click();
+        BrowserUtils.sleep(10);
+        */
 
     }
 
@@ -101,28 +117,39 @@ String fakeName= faker.name().firstName();
     public void user_clicks_any_user() {
        BrowserUtils.sleep(5);
 
-       BrowserUtils.clickWithJS(contactsPage.firstPerson);
-        //contactsPage.firstPerson.click();
+       BrowserUtils.clickWithJS(contactsPage.allContactButton);
+        BrowserUtils.sleep(2);
+       BrowserUtils.clickWithJS(contactsPage.lastPerson);
 
     }
     @And("user clicks contact's profile picture")
     public void user_clicks_contact_s_profile_picture() {
-       BrowserUtils.sleep(5);
-        contactsPage.picIcon.click();
+       BrowserUtils.sleep(10);
+        BrowserUtils.clickWithJS(contactsPage.picIcon);
     }
     @Then("user is able to click choose from files")
     public void user_is_able_to_click_choose_from_files() {
       /*  WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 5);
        wait.until(ExpectedConditions.elementToBeClickable(contactsPage.chooseFromFiles));*/
-       BrowserUtils.sleep(5);
+       BrowserUtils.sleep(10);
         contactsPage.chooseFromFiles.click();
+        BrowserUtils.sleep(5);
         Assert.assertTrue(contactsPage.fileWindow.isDisplayed());
+
+        BrowserUtils.sleep(5);
+
+        contactsPage.closefile.click();
+
+        contactsPage.profileE.click();
+        BrowserUtils.sleep(2);
+        contactsPage.logout.click();
+        BrowserUtils.sleep(10);
     }
 
     @When("user clicks any contact")
     public void user_clicks_any_contact() {
-    BrowserUtils.sleep(5);
-        contactsPage.firstPerson.click();
+       BrowserUtils.sleep(10);
+       BrowserUtils.clickWithJS(contactsPage.threeName);
 
     }
     @When("user click ... next to contact's name")
@@ -134,7 +161,10 @@ String fakeName= faker.name().firstName();
     @Then("user deletes contact")
     public void user_deletes_contact() {
         BrowserUtils.sleep(6);
-        contactsPage.deleteButton.click();
+        BrowserUtils.clickWithJS(contactsPage.deleteButton);
+
+      WebElement noContactSelected= Driver.getDriver().findElement(By.xpath("(//h2[@class='empty-content__title'])[2]"));
+        Assert.assertTrue(noContactSelected.isDisplayed());
 
     }
 
