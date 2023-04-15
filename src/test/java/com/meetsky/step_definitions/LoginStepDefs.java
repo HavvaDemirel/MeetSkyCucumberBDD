@@ -1,10 +1,8 @@
 package com.meetsky.step_definitions;
 
-import com.meetsky.pages.DashboardPage;
 import com.meetsky.pages.LoginPage;
 import com.meetsky.utilities.ConfigurationReader;
 import com.meetsky.utilities.Driver;
-import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -24,6 +22,4 @@ public class LoginStepDefs {
         Assert.assertEquals(Driver.getDriver().getTitle(),ConfigurationReader.getProperty("expected.title"));
 
     }
-
-
 }
