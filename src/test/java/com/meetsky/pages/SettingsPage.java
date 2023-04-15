@@ -37,31 +37,20 @@ public class SettingsPage {
     @FindBy(xpath="//*[@id=\"phoneform\"]/h3/a/span")
     public WebElement phoneNumberKey;
 
-
-
-
     @FindBy (xpath ="//*[@id=\"phoneform\"]/h3/a/div/ul/li[1]/a/p/strong")
     public WebElement privateOption;
 
+   @FindBy(id= "localeinput")
+   public WebElement localeDropdown;
 
-   // @FindBy (xpath="//*[@id=\"localeexample-date\"]")
-   //@FindBy(id= "localeinput")
-    //public WebElement localeDropdown;
+    @FindBy (xpath= "//*[@id=\"localeinput\"]/option[271]")
+    public WebElement currentLocation;
 
-
-   // @FindBy (xpath= "//*[@id=\"localeinput\"]/option[271]")
-   // public WebElement currentLocation;
-
-
-   //@FindBy(xpath="//*[@id=\"localeexample-date\"]")
     @FindBy(id="localeexample-time")
     public WebElement localtime;
 
-
-
-
-
-
+    @FindBy(xpath="//div[@class='preview-card__header']")
+    public WebElement userName;
 
 
 

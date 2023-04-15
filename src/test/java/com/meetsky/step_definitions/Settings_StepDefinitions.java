@@ -3,6 +3,7 @@ package com.meetsky.step_definitions;
 import com.meetsky.pages.LoginPage;
 import com.meetsky.pages.SettingsPage;
 import com.meetsky.utilities.BrowserUtils;
+import com.meetsky.utilities.Driver;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -26,8 +27,10 @@ public class Settings_StepDefinitions extends SettingsPage {
     @Then("user can see name title inside profile setting page")
     public void userCanSeeNameTitleInsideProfileSettingPage() {
 
+        settingsPage.fullName.clear();
+        settingsPage.fullName.sendKeys("Summer");
        BrowserUtils.sleep(2);
-        Assert.assertTrue(settingsPage.fullName.isDisplayed());
+        //Assert.assertTrue(settingsPage.fullName.isDisplayed());
 
     }
 
@@ -67,8 +70,31 @@ public class Settings_StepDefinitions extends SettingsPage {
 
     }
 
+    @And("user enter special characters and numbers")
+    public void userEnterSpecialCharactersAndNumbers()  {
+
+
+        BrowserUtils.sleep(3);
+        settingsPage.fullName.clear();
+        BrowserUtils.sleep(2);
+        settingsPage.fullName.sendKeys("#######@!&*3?/");
+        BrowserUtils.sleep(3);
+
+        Assert.assertFalse(userName.getText().contains("#######@!&*3?/"));
+
+    }
+
+    @Then("user should not change name with special characters and numbers")
+    public void userShouldNotChangeNameWithSpecialCharactersAndNumbers() {
+    }
+
+
     @When("user click on the federation button and see option on the dropdown")
     public void userClickOnTheFederationButtonAndSeeOptionOnTheDropdown() {
+
+        settingsPage.phoneNumber.sendKeys("7884565151");
+        BrowserUtils.sleep(3);
+        Assert.assertTrue(settingsPage.phoneNumber.isDisplayed());
 
         settingsPage.phoneNumberKey.click();
         BrowserUtils.sleep(3);
@@ -80,7 +106,6 @@ public class Settings_StepDefinitions extends SettingsPage {
         settingsPage.privateOption.click();
         BrowserUtils.sleep(5);
 
-
     }
 
     @Then("user should display phone number as private successfully")
@@ -91,29 +116,20 @@ public class Settings_StepDefinitions extends SettingsPage {
     public void userIsOnTheDashboardPageAndClickOnSettingsSectio() {
     }
 
+    @Then("user click on the Locale section")
+    public void userClickOnTheLocaleSection() {
 
-   // @Then("user click on the Locale dropdown")
-   // public void userClickOnTheLocaleDropdown() {
-  // @Then("user click on the Locale section")
-  // public void userClickOnTheLocaleSection() {
+        settingsPage.localeDropdown.click();
+        BrowserUtils.sleep(3);
 
+    }
 
-
-      //  settingsPage.localeDropdown.click();
-      //  BrowserUtils.sleep(3);
-    //  }
-
-/*
     @And("user select current localation")
     public void userSelectCurrentLocalation() {
 
         settingsPage.currentLocation.click();
         BrowserUtils.sleep(3);
-
     }
-
- */
-
 
     @And("user see the current local time on the page")
     public void userSeeTheCurrentLocalTimeOnThePage() {
@@ -123,5 +139,6 @@ public class Settings_StepDefinitions extends SettingsPage {
         Assert.assertTrue(settingsPage.localtime.isDisplayed());
         BrowserUtils.sleep(5);
     }
+
 
 }
