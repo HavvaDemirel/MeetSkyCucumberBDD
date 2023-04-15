@@ -17,7 +17,8 @@ import org.openqa.selenium.interactions.Actions;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FilesFunctionsStepDefs {
+public class
+FilesFunctionsStepDefs {
 
 
     FilesPage filesPage = new FilesPage();
