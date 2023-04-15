@@ -29,7 +29,7 @@ public class ContactsPage {
     @FindBy(xpath = "//svg[@viewBox='0 0 24 24']")
     public WebElement allListIcon;
 
-    @FindBy(xpath = "(//div[@role='listitem']/span)[5]")
+    @FindBy(xpath = "//div[@role='group']/div[5]/span")
     public WebElement lastPerson;
 
     @FindBy(xpath = "(//button[@type='button'])[9]")

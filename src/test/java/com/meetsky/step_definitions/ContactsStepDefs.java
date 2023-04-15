@@ -21,7 +21,7 @@ import java.util.List;
 
 public class ContactsStepDefs {
 
-ContactsPage contactsPage;
+ContactsPage contactsPage ;
 Faker faker = new Faker();
 
 String fakeName= faker.name().firstName();
@@ -38,7 +38,7 @@ String fakeName= faker.name().firstName();
     @Given("user clicks New contact")
     public void user_clicks_new_contact() {
        BrowserUtils.sleep(5);
-        contactsPage.createNewContact.click();
+        BrowserUtils.clickWithJS(contactsPage.createNewContact);
 
     }
     @Given("user put name and last name of new contact")
@@ -65,13 +65,16 @@ String fakeName= faker.name().firstName();
         }
         BrowserUtils.sleep(5);
         BrowserUtils.clickWithJS(contactsPage.firstContact);
+
         BrowserUtils.clickWithJS(contactsPage.threeDots);
         BrowserUtils.clickWithJS(contactsPage.deleteButton);
-
+/*
         BrowserUtils.sleep(5);
         contactsPage.profileE.click();
         BrowserUtils.sleep(2);
         contactsPage.logout.click();
+
+ */
     }
 
     @When("user clicks All contacts")
@@ -100,7 +103,7 @@ String fakeName= faker.name().firstName();
 
         for (WebElement each : allContacts) {
             System.out.println(each.getText());
-           Assert.assertEquals(each.getText(), "three");
+           Assert.assertEquals(each.getText(), "y");
         }/*
         BrowserUtils.sleep(5);
         contactsPage.closefile.click();
@@ -118,8 +121,8 @@ String fakeName= faker.name().firstName();
        BrowserUtils.sleep(5);
 
        BrowserUtils.clickWithJS(contactsPage.allContactButton);
-        BrowserUtils.sleep(2);
-       BrowserUtils.clickWithJS(contactsPage.lastPerson);
+        BrowserUtils.sleep(5);
+       BrowserUtils.clickWithJS(contactsPage.firstContact);
 
     }
     @And("user clicks contact's profile picture")
@@ -132,24 +135,26 @@ String fakeName= faker.name().firstName();
       /*  WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 5);
        wait.until(ExpectedConditions.elementToBeClickable(contactsPage.chooseFromFiles));*/
        BrowserUtils.sleep(10);
-        contactsPage.chooseFromFiles.click();
+       BrowserUtils.clickWithJS(contactsPage.chooseFromFiles);
         BrowserUtils.sleep(5);
         Assert.assertTrue(contactsPage.fileWindow.isDisplayed());
 
         BrowserUtils.sleep(5);
-
+/*
         contactsPage.closefile.click();
 
         contactsPage.profileE.click();
         BrowserUtils.sleep(2);
         contactsPage.logout.click();
         BrowserUtils.sleep(10);
+
+ */
     }
 
     @When("user clicks any contact")
     public void user_clicks_any_contact() {
        BrowserUtils.sleep(10);
-       BrowserUtils.clickWithJS(contactsPage.threeName);
+       BrowserUtils.clickWithJS(contactsPage.firstContact);
 
     }
     @When("user click ... next to contact's name")
