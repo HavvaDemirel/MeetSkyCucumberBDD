@@ -17,7 +17,9 @@ import org.junit.runner.RunWith;
         glue = "com/meetsky/step_definitions",
         dryRun =false,
         tags = "@wip",
+
         publish = true
+
 )
 
 public class CukesRunner {
