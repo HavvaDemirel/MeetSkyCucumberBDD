@@ -5,7 +5,7 @@ Feature: Files Functionality
   Background:
     Given user logged in successfully
 
- # @MEETS10-399 @smoke
+ @MEETS10-399
   Scenario: User can add a comment to any file
 
     Given the user click on the files button
@@ -32,7 +32,7 @@ Feature: Files Functionality
     And the user clicks delete commend button
     Then user see comment deleted message
 
-  @MEETS10-401
+  @MEETS10-401 @smoke
   Scenario: user can rename a file
 
     Given  the user click on the files button
